@@ -7,14 +7,16 @@ import (
 
 type handler struct{}
 
-func staticHandler(writer http.ResponseWriter, request *http.Request) {}
-
 func (r *handler) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
-	if request.URL.Path == "/socket/" {
+	switch request.URL.Path {
+	case "/socket/":
 		websocket.Handler(socketHandler).ServeHTTP(writer, request)
 		return
+	case "/game.js":
+		http.ServeFile(writer, request, "src/github.com/aspyrx/snaaaake/game.js")
+	case "/style.css":
+		http.ServeFile(writer, request, "src/github.com/aspyrx/snaaaake/style.css")
+	default:
+		http.ServeFile(writer, request, "src/github.com/aspyrx/snaaaake/index.html")
 	}
-
-	// Everything else should be static.
-	staticHandler(writer, request)
 }

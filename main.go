@@ -29,6 +29,5 @@ func initGame(players []*player) *game {
 }
 
 func main() {
-	// http.ListenAndServe("192.168.43.235:10001", &handler{})
-	http.ListenAndServe("0.0.0.0:10001", &handler{})
+	http.ListenAndServe("0.0.0.0:8080", &handler{})
 }
