@@ -1,4 +1,4 @@
-var WS_URI = "ws://" + location.hostname + "/socket/";
+var WS_URI = "ws://" + location.hostname + ":" + location.port + "/socket/";
 var MAP_WIDTH = 32;
 var MAP_HEIGHT = 32;
 var GRID_WIDTH = 1;
