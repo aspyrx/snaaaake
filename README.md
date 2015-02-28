@@ -6,10 +6,9 @@
 
 ###Running
 
-Run the binary in the same directory as your Golang source folder.
+Run the binary in the directory that contains your Go source code (in most cases, your `$GOPATH`).
 
-The program expects `game.js`, `style.css`, and `index.html` to be located
-in the directory `./src/github.com/aspyrx/snaaaake`.
+The program expects `game.js`, `style.css`, and `index.html` to be located in the directory `./src/github.com/aspyrx/snaaaake`.
 
 ###License (BSD)
 
